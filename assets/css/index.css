@@ -1,5 +1,5 @@
 :root {
-    --main-color: #1e68af;
+    --main-color: #af1e83;
     --grey-color: #343a40;
     --accent-color: #ffd43b;
 
@@ -40,7 +40,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
     padding: 0;
 }
 
@@ -50,7 +50,8 @@ body {
 }
 
 .logo-text {
-    color: white;
+    color: var(--main-color);
+    font-weight: bold;
     font-size: var(--font-md);
     margin-right: var(--spacing-md);
 }
@@ -68,7 +69,7 @@ body {
 }
 
 .nav-links li {
-    background-color: var(--main-color);
+    border-color: var(--main-color);
     transition: background-color 0.3s ease;
     border-left: 1px solid white;
 }
@@ -80,7 +81,7 @@ body {
 .nav-links a {
     display: block;
     padding: var(--spacing-md) var(--spacing-lg);
-    color: white;
+    color: var(--main-color);
     text-decoration: none;
     font-size: var(--font-lg);
     text-align: center;
@@ -88,7 +89,7 @@ body {
 
 .nav-links a.active,
 .nav-links li:hover {
-    background-color: #0f3c66;
+    background-color: var(--main-color);
     color: white;
     font-weight: bold;
 }
@@ -98,7 +99,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f2f2f2;
+    background: #fff0fd;
 }
 
 .login-box {
@@ -120,12 +121,14 @@ input {
 button {
     width: 100%;
     padding: 10px;
-    background: #007393;
+    background: var(--main-color);
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background: #03c8ff;
+    background: white;
+    border: 2px solid var(--main-color);
+    color: black;
 }
