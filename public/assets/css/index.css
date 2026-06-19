@@ -87,9 +87,17 @@ body {
     text-align: center;
 }
 
-.nav-links a.active,
+.nav-links a.active {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+}
+
 .nav-links li:hover {
     background-color: var(--main-color);
+}
+
+.nav-links li:hover a {
     color: white;
     font-weight: bold;
 }
@@ -113,7 +121,7 @@ body {
 
 
 input {
-    width: 92%;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
 }
@@ -125,10 +133,12 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 button:hover {
     background: white;
     border: 2px solid var(--main-color);
     color: black;
+    transition: background-color 0.3s ease;
 }

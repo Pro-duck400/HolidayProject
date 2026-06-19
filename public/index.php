@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "includes/db.php";
+require_once "../app/view/includes/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "Invalid email or password";
 }
 ?>
-<?php include "includes/navbar.php"; ?>
+<?php include "../app/view/layout/navbar.php"; ?>
 <!DOCTYPE html>
 <html>
 
