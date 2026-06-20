@@ -24,6 +24,13 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             </li>
 
             <li>
+                <a href="calendar.php"
+                    class="<?= $currentPage === 'calendar.php' ? 'active' : '' ?>">
+                    Calender
+                </a>
+            </li>
+
+            <li>
                 <a href="logout.php">
                     Logout
                 </a>

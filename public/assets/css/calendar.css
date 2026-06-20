@@ -1,0 +1,55 @@
+#calendar {
+    width: 95%;
+    max-width: 1600px;
+    height: 85vh;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.fc .fc-button {
+    background: #af1e83;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fc .fc-toolbar-chunk {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fc .fc-button:hover {
+    background: white;
+    border: 2px solid var(--main-color);
+    color: black;
+}
+
+.fc td, .fc th {
+    border-color: #ddd;
+}
+
+.fc-timegrid-slot {
+    height: 3.5em !important;
+}
+
+.fc-toolbar-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #af1e83;
+}
+
+.fc {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: white;
+    padding: 10px;
+}
+
+.fc .fc-day-today {
+    background-color: #fff0fd !important;
+}
