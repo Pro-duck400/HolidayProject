@@ -29,7 +29,8 @@
     color: black;
 }
 
-.fc td, .fc th {
+.fc td,
+.fc th {
     border-color: #ddd;
 }
 
@@ -45,11 +46,151 @@
 
 .fc {
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     background: white;
     padding: 10px;
 }
 
 .fc .fc-day-today {
     background-color: #fff0fd !important;
+}
+
+.workout-base {
+    padding: 1rem;
+}
+
+.workout-page {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #fff0fd;
+    min-height: calc(100vh - 80px);
+}
+
+.workout-card {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.workout-card h1 {
+    text-align: center;
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.workout-card input,
+.workout-card select,
+.workout-card textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.workout-card textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.workout-card input:focus,
+.workout-card select:focus,
+.workout-card textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 3px rgba(175, 30, 131, 0.15);
+}
+
+.form-divider {
+    margin: 30px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.color-picker {
+    width: 80px !important;
+    height: 45px;
+    padding: 0;
+    border: none;
+}
+
+.new-type-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.new-type-row input[type="text"] {
+    flex: 1;
+}
+
+.color-picker {
+    width: 60px !important;
+    height: 45px;
+    padding: 0 !important;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.btn-save,
+.btn-cancel,
+.btn-delete {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+}
+
+.btn-save {
+    background: #af1e83;
+    color: white;
+}
+
+.btn-save:hover {
+    background: #8d166a;
+}
+
+.btn-cancel {
+    background: #ccc;
+    color: black;
+}
+
+.btn-cancel:hover {
+    background: #b3b3b3;
+}
+
+.btn-delete {
+    background: #e53935;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c62828;
 }

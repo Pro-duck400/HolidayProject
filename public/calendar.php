@@ -1,7 +1,58 @@
 <?php
 
 require_once __DIR__ . "/../app/view/layout/auth.php";
+require_once "../app/view/includes/db.php";
 
+$events = [];
+
+$query = "
+
+SELECT
+
+    workouts.id,
+
+    workouts.workout_name,
+
+    workouts.workout_date,
+
+    workout_types.color
+
+FROM workouts
+
+JOIN workout_types
+
+ON workouts.workout_type_id =
+    workout_types.id
+
+WHERE workouts.user_id = ?
+
+";
+
+$stmt = $conn->prepare($query);
+
+$stmt->bind_param(
+    "i",
+    $_SESSION['user_id']
+);
+
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+
+    $events[] = [
+
+        "id" => $row["id"],
+
+        "title" => $row["workout_name"],
+
+        "start" => $row["workout_date"],
+
+        "color" => $row["color"]
+
+    ];
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +89,7 @@ require_once __DIR__ . "/../app/view/layout/auth.php";
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
 
-                initialView: 'timeGridWeek',
+                initialView: 'dayGridMonth',
 
                 selectable: true,
 
@@ -46,25 +97,9 @@ require_once __DIR__ . "/../app/view/layout/auth.php";
 
                 headerToolbar: {
                     left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    right: 'title',
                 },
-
-                events: [
-
-                    {
-                        id: 1,
-                        title: '5km Run',
-                        start: '2026-01-13'
-                    },
-
-                    {
-                        id: 2,
-                        title: 'Gym Session',
-                        start: '2026-01-15'
-                    }
-
-                ],
+                events: <?= json_encode($events) ?>,
 
                 dateClick: function(info) {
 

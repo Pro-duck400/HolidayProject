@@ -26,7 +26,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <li>
                 <a href="calendar.php"
                     class="<?= $currentPage === 'calendar.php' ? 'active' : '' ?>">
-                    Calender
+                    Calendar
                 </a>
             </li>
 
