@@ -31,6 +31,14 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             </li>
 
             <li>
+                <a href="profile.php"
+                    class="<?= $currentPage === 'profile.php' ? 'active' : '' ?>">
+                    Profile
+                </a>
+            </li>
+
+
+            <li>
                 <a href="logout.php">
                     Logout
                 </a>

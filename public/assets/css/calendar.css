@@ -155,6 +155,23 @@
     justify-content: space-between;
 }
 
+.top-workout {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.top-workout h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+.top-workout a {
+    position: absolute;
+    right: 0;
+}
+
 .btn-save,
 .btn-cancel,
 .btn-delete {
@@ -171,26 +188,30 @@
 .btn-save {
     background: #af1e83;
     color: white;
+    border: 2px solid #af1e83;
 }
 
 .btn-save:hover {
-    background: #8d166a;
+    background: white;
+    color: #af1e83;
 }
 
 .btn-cancel {
-    background: #ccc;
     color: black;
+    font-size: 20px;
 }
 
 .btn-cancel:hover {
-    background: #b3b3b3;
+    background: #f3f3f3;
 }
 
 .btn-delete {
-    background: #e53935;
-    color: white;
+    background: white;
+    color: #af1e83;
+    border: 2px solid #af1e83;
 }
 
 .btn-delete:hover {
-    background: #c62828;
+    background: #af1e83;
+    color: white;
 }

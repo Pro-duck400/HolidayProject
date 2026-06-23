@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     placeholder="Password"
                     required>
 
-                <button type="submit">
+                <button type="submit" class="btn">
                     Login
                 </button>
 

@@ -79,48 +79,49 @@ while ($row = $result->fetch_assoc()) {
 <body>
 
     <?php include __DIR__ . "/../app/view/layout/navbar.php"; ?>
+    <div class="workout-page">
+        <div id="calendar"></div>
 
-    <div id="calendar"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+                const calendarEl = document.getElementById('calendar');
 
-            const calendarEl = document.getElementById('calendar');
+                const calendar = new FullCalendar.Calendar(calendarEl, {
 
-            const calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
 
-                initialView: 'dayGridMonth',
+                    selectable: true,
 
-                selectable: true,
+                    editable: true,
 
-                editable: true,
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        right: 'title',
+                    },
+                    events: <?= json_encode($events) ?>,
 
-                headerToolbar: {
-                    left: 'prev,next today',
-                    right: 'title',
-                },
-                events: <?= json_encode($events) ?>,
+                    dateClick: function(info) {
 
-                dateClick: function(info) {
+                        window.location =
+                            "add_workout.php?date=" +
+                            info.dateStr;
+                    },
 
-                    window.location =
-                        "add_workout.php?date=" +
-                        info.dateStr;
-                },
+                    eventClick: function(info) {
 
-                eventClick: function(info) {
+                        window.location =
+                            "edit_workout.php?id=" +
+                            info.event.id;
+                    }
 
-                    window.location =
-                        "edit_workout.php?id=" +
-                        info.event.id;
-                }
+                });
+
+                calendar.render();
 
             });
-
-            calendar.render();
-
-        });
-    </script>
+        </script>
+    </div>
 
 </body>
 

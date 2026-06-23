@@ -49,8 +49,12 @@ $types = $conn->query("
     <div class="workout-page">
 
         <div class="workout-card">
-            <h1>Edit Workout</h1>
-
+            <div class="top-workout">
+                <h1>Edit Workout</h1>
+                <a href="calendar.php" class="btn-cancel">
+                    X
+                </a>
+            </div>
             <form method="POST" action="update_workout.php">
 
                 <input type="hidden" name="id" value="<?= $workout['id'] ?>">
@@ -104,14 +108,6 @@ $types = $conn->query("
 
                 <div class="action-buttons">
 
-                    <button type="submit" class="btn-save">
-                        Save Changes
-                    </button>
-
-                    <a href="calendar.php" class="btn-cancel">
-                        Cancel
-                    </a>
-
                     <form action="delete_workout.php" method="POST" class="inline-form">
 
                         <input type="hidden" name="id" value="<?= $workout['id'] ?>">
@@ -126,6 +122,10 @@ $types = $conn->query("
                         </button>
 
                     </form>
+
+                    <button type="submit" class="btn-save">
+                        Save Changes
+                    </button>
 
                 </div>
             </form>

@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     name="password"
                     placeholder="Password"
                     required>
-                <button type="submit">
+                <button class="btn" type="submit">
                     Sign Up
                 </button>
             </form>

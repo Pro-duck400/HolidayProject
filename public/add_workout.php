@@ -105,11 +105,11 @@ $types = $conn->query(
 
                 <br><br>
 
-                <button type="submit">
+                <button class="btn" type="submit">
 
                     Save Workout
 
-                </button>
+                    </button>
 
             </form>
         </div>
